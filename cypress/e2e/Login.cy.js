@@ -34,6 +34,27 @@ it('incorrect username TC_41', () =>{
     
 
     })
+it('incorrect password TC_42', () =>{
+  expect(data.login.incorrectpassword).to.exist
+    login_PO.Login(data.login.incorrectpassword.username, data.login.incorrectpassword.password)
+    login_PO.invalidUsernameAssertion()
+    
+
+    })
+it('Empty username TC_43', () =>{
+    expect(data.login.emptyEmail).to.exist
+    login_PO.BlankusernameLogin(data.login.emptyEmail.username, data.login.emptyEmail.password)
+    login_PO.emptyusernameAssertion()    
+
+    })
+
+it('Empty password TC_43', () =>{
+    expect(data.login.emptyEmail).to.exist
+    login_PO.BlankpasswordLogin(data.login.emptyPassword.username, data.login.emptyPassword.password)
+    login_PO.emptypasswordAssertion()   
+
+    })
+
 
 
 
