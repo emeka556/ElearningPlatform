@@ -6,7 +6,6 @@ class Login_PO {
         cy.get('[type="checkbox"]').check({ force: true })
         cy.get('#btn_signin').click()
         
-
     
     }
 }

@@ -11,9 +11,17 @@ cy.fixture('credentials').then((data)=>{
 
 })
 
-it('successful login', () =>{
+it('successful Tutor login TC_39', () =>{
   expect(data.login.validdatasetTutor).to.exist
     login_PO.Login(data.login.validdatasetTutor.username, data.login.validdatasetTutor.password)
+    cy.wait(5000)
+    
+    
+
+    }) 
+it('successful Parent login TC_40', () =>{
+  expect(data.login.validdatasetParent).to.exist
+    login_PO.Login(data.login.validdatasetParent.username, data.login.validdatasetParent.password)
     
     
 
