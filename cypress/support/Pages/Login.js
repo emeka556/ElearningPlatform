@@ -8,6 +8,11 @@ class Login_PO {
         
     
     }
+    validAssertion() {
+        cy.url().should("eq", "https://tutordotconnect.com/tutorconnect/home/profile")
+       
+
+    }
 }
 
 export default Login_PO;
