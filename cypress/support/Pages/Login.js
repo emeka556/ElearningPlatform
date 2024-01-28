@@ -13,6 +13,18 @@ class Login_PO {
        
 
     }
+
+    waitAfterAssertion() {
+        cy.wait(5000) // wait 5 seconds until the next block of code
+    }
+
+    invalidUsernameAssertion() {
+       
+        cy.get('#dng_msg_t').should("be.visible")
+        cy.contains("Your login credentials are invalid. Please try again.").should("be.visible")
+    }
+    //
+
 }
 
 export default Login_PO;
