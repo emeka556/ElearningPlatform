@@ -1,30 +1,22 @@
 class Login_PO {
     Login(username, password) {
         cy.visit("https://tutordotconnect.com/tutorconnect/home/login");
+        // Type or clear the username based on its presence
+    if (username) {
         cy.get('#emailaddress').type(username)
-        cy.get('#password').type(password)
-        cy.get('[type="checkbox"]').check({ force: true })
-        cy.get('#btn_signin').click()
-        
-    
-    }
-    BlankusernameLogin(username, password) {
-        cy.visit("https://tutordotconnect.com/tutorconnect/home/login");
-        cy.get('#emailaddress').clear(username)
-        cy.get('#password').type(password)
-        cy.get('[type="checkbox"]').check({ force: true })
-        cy.get('#btn_signin').click()
-        
-    
+    } else {
+        cy.get('#emailaddress').clear()
     }
 
-    BlankpasswordLogin(username, password) {
-        cy.visit("https://tutordotconnect.com/tutorconnect/home/login");
-        cy.get('#emailaddress').type(username)
-        cy.get('#password').clear(password)
-        cy.get('[type="checkbox"]').check({ force: true })
-        cy.get('#btn_signin').click()
-        
+    // Type or clear the password based on its presence
+    if (password) {
+        cy.get('#password').type(password)
+    } else {
+        cy.get('#password').clear()
+    }
+
+    cy.get('[type="checkbox"]').check({ force: true })
+    cy.get('#btn_signin').click();
     
     }
     validAssertion() {
@@ -34,7 +26,7 @@ class Login_PO {
     }
 
     waitAfterAssertion() {
-        cy.wait(5000) // wait 5 seconds until the next block of code
+        cy.wait(4000) // wait 5 seconds until the next block of code
     }
 
     invalidUsernameAssertion() {
