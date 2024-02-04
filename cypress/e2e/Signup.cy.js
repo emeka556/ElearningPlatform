@@ -58,6 +58,18 @@ it('Miss match password TC_29', () =>{
 
     }) 
 
+it('Miss match password Tutor TC_31', () =>{
+  expect(data.registration.passwordMismatchTutor).to.exist
+    signin_PO.Signup(data.registration.passwordMismatchTutor.surname, data.registration.passwordMismatchTutor.firstname
+        ,data.registration.passwordMismatchTutor.email,data.registration.passwordMismatchTutor.phone,data.registration.passwordMismatchTutor.password
+        ,data.registration.passwordMismatchTutor.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+        signin_PO.passwordNotMatchAssertion()
+  
+    
+
+    }) 
 
 
 
