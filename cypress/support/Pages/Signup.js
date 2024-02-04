@@ -11,8 +11,11 @@ class Signup_PO{
         // #country-listbox is the ID for the dropdown list, get from the list that contains Brazil and click
         cy.get('#country-listbox').contains('United Kingdom').click();
       
-        cy.get('#mobile').type(phone)
-        cy.get('#passwordreg').type(password)
+        if (password){cy.get('#passwordreg').type(password)
+    } else {
+        cy.get('passwordreg').clear()
+    }
+        
         cy.get('#cnpassword').type(confirmPassword)
         cy.get('[type="checkbox"]').check({ force: true })
         cy.get('#btn_signin').click()

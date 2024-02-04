@@ -91,6 +91,15 @@ it('Less than 8 charater password Tutor TC_33', () =>{
 
     }) 
 
+it('Empty phone number Tutor TC_35', () =>{
+  //expect(data.registration.NoPhoneNumberT).to.exist
+    signin_PO.Signup(data.registration.NoPhoneNumberT.surname, data.registration.NoPhoneNumberT.firstname
+        ,data.registration.NoPhoneNumberT.email,data.registration.NoPhoneNumberT.phone,data.registration.NoPhoneNumberT.password
+        ,data.registration.NoPhoneNumberT.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+
+    }) 
 
 
 
