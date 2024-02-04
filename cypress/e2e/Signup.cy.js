@@ -81,6 +81,16 @@ it('Wrong email format Tutor TC_32', () =>{
 
     }) 
 
+it('Less than 8 charater password Tutor TC_33', () =>{
+  expect(data.registration.lessPasswordT).to.exist
+    signin_PO.Signup(data.registration.lessPasswordT.surname, data.registration.lessPasswordT.firstname
+        ,data.registration.lessPasswordT.email,data.registration.lessPasswordT.phone,data.registration.lessPasswordT.password
+        ,data.registration.lessPasswordT.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+
+    }) 
+
 
 
 
