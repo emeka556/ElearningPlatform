@@ -4,18 +4,25 @@ class Signup_PO{
         cy.visit("https://tutordotconnect.com/tutorconnect/home/register");
         cy.get('#lastname').type(surname)
         cy.get('#firstname').type(firstname)
-        cy.get('#emailaddress').type(email)
+        
+        if (email) {
+            cy.get('#emailaddress').type(email)
+        } else {
+            cy.get('#emailaddress').clear()
+        }
+
        // Click the dropdown to open the options
         cy.get('.selected-flag').click();
 
         // #country-listbox is the ID for the dropdown list, get from the list that contains Brazil and click
         cy.get('#country-listbox').contains('United Kingdom').click();
       
-        if (password){cy.get('#passwordreg').type(password)
-    } else {
-        cy.get('passwordreg').clear()
-    }
-        
+        if (phone) {
+            cy.get('#mobile').type(phone)
+        } else {
+            cy.get('#mobile').clear()
+        }
+        cy.get('#passwordreg').type(password)
         cy.get('#cnpassword').type(confirmPassword)
         cy.get('[type="checkbox"]').check({ force: true })
         cy.get('#btn_signin').click()

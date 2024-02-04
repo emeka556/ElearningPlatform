@@ -101,6 +101,16 @@ it('Empty phone number Tutor TC_35', () =>{
 
     }) 
 
+it('Empty email field Tutor TC_34', () =>{
+  //expect(data.registration.NoPhoneNumberT).to.exist
+    signin_PO.Signup(data.registration.NoemailT.surname, data.registration.NoemailT.firstname
+        ,data.registration.NoemailT.email,data.registration.NoemailT.phone,data.registration.NoemailT.password
+        ,data.registration.NoemailT.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+
+    }) 
+
 
 
 })
