@@ -8,6 +8,17 @@ cy.fixture('credentials').then((data)=>{
   globalThis.data = data
 
 })
+   }) 
+
+it('special character in Surname, Firstname field TC_24', () =>{
+  expect(data.registration.diffcharacterparent).to.exist
+    signin_PO.Signup(data.registration.diffcharacterparent.surname, data.registration.diffcharacterparent.firstname
+        ,data.registration.diffcharacterparent.email,data.registration.diffcharacterparent.phone,data.registration.diffcharacterparent.password
+        ,data.registration.diffcharacterparent.confirmPassword)
+        
+     signin_PO.waitAfterAssertion()
+  
+    
 
 })
 
@@ -17,7 +28,7 @@ it('wrong email formatP TC_25', () =>{
         ,data.registration.wrongEmailP.email,data.registration.wrongEmailP.phone,data.registration.wrongEmailP.password
         ,data.registration.wrongEmailP.confirmPassword)
         
-       // signin_PO.invalidemailFormatAssertion()
+        signin_PO.waitAfterAssertion()
   
     
 
