@@ -90,6 +90,8 @@ it('Less than 8 charater password Tutor TC_33', () =>{
         signin_PO.waitAfterAssertion()
 
     }) 
+
+
 it('Empty email field Tutor TC_34', () =>{
   //expect(data.registration.NoPhoneNumberT).to.exist
     signin_PO.Signup(data.registration.NoemailT.surname, data.registration.NoemailT.firstname
@@ -99,7 +101,6 @@ it('Empty email field Tutor TC_34', () =>{
         signin_PO.waitAfterAssertion()
 
     }) 
-
 it('Empty phone number Tutor TC_35', () =>{
   //expect(data.registration.NoPhoneNumberT).to.exist
     signin_PO.Signup(data.registration.NoPhoneNumberT.surname, data.registration.NoPhoneNumberT.firstname
@@ -108,7 +109,17 @@ it('Empty phone number Tutor TC_35', () =>{
         
         signin_PO.waitAfterAssertion()
 
-    })
+    }) 
+
+it('Regiser with existing email Tutor TC_38', () =>{
+  expect(data.registration.Existingemail).to.exist
+    signin_PO.Signup(data.registration.Existingemail.surname, data.registration.Existingemail.firstname
+        ,data.registration.Existingemail.email,data.registration.Existingemail.phone,data.registration.Existingemail.password
+        ,data.registration.Existingemail.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+
+    }) 
 
 
 
