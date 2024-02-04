@@ -34,6 +34,30 @@ it('wrong email formatP TC_25', () =>{
 
     }) 
 
+it('password less than 8 characters TC_28', () =>{
+  expect(data.registration.lessPasswordP).to.exist
+    signin_PO.Signup(data.registration.lessPasswordP.surname, data.registration.lessPasswordP.firstname
+        ,data.registration.lessPasswordP.email,data.registration.lessPasswordP.phone,data.registration.lessPasswordP.password
+        ,data.registration.lessPasswordP.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+  
+    
+
+    }) 
+it('Miss match password TC_29', () =>{
+  expect(data.registration.passwordMismatchParent).to.exist
+    signin_PO.Signup(data.registration.passwordMismatchParent.surname, data.registration.passwordMismatchParent.firstname
+        ,data.registration.passwordMismatchParent.email,data.registration.passwordMismatchParent.phone,data.registration.passwordMismatchParent.password
+        ,data.registration.passwordMismatchParent.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+        signin_PO.passwordNotMatchAssertion()
+  
+    
+
+    }) 
+
 
 
 
