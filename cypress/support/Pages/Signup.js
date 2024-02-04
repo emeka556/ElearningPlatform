@@ -5,9 +5,12 @@ class Signup_PO{
         cy.get('#lastname').type(surname)
         cy.get('#firstname').type(firstname)
         cy.get('#emailaddress').type(email)
-        cy.get('#country-listbox').click({ force: true }) // Click on the dropdown to open it
+       // Click the dropdown to open the options
+        cy.get('.selected-flag').click();
 
-        cy.get('#iti-item-gb').click({ force: true }); // Click on the option for United Kingdom
+        // #country-listbox is the ID for the dropdown list, get from the list that contains Brazil and click
+        cy.get('#country-listbox').contains('United Kingdom').click();
+      
         cy.get('#mobile').type(phone)
         cy.get('#passwordreg').type(password)
         cy.get('#cnpassword').type(confirmPassword)
