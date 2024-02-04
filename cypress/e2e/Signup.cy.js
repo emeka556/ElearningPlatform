@@ -71,6 +71,16 @@ it('Miss match password Tutor TC_31', () =>{
 
     }) 
 
+it('Wrong email format Tutor TC_32', () =>{
+  expect(data.registration.wrongEmailT).to.exist
+    signin_PO.Signup(data.registration.wrongEmailT.surname, data.registration.wrongEmailT.firstname
+        ,data.registration.wrongEmailT.email,data.registration.wrongEmailT.phone,data.registration.wrongEmailT.password
+        ,data.registration.wrongEmailT.confirmPassword)
+        
+        signin_PO.waitAfterAssertion()
+
+    }) 
+
 
 
 
